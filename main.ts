@@ -21,6 +21,7 @@ function randomAssets () {
         deathpill = sprites.create(assets.image`myImage3`, SpriteKind.Enemy)
         deathpill.x = randint(0, scene.screenWidth())
         deathpill.y = randint(0, scene.screenHeight())
+        deathpill.setScale(0.7, ScaleAnchor.Middle)
     }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
