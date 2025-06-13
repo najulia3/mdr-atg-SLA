@@ -39,6 +39,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let deathpill: Sprite = null
 let papel: Sprite = null
 let lata: Sprite = null
+music.play(music.stringPlayable("C5 B A G F E D C ", 171), music.PlaybackMode.UntilDone)
 info.setLife(3)
 info.startCountdown(50)
 let mySprite3 = sprites.create(img`
