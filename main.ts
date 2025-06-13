@@ -8,16 +8,6 @@ namespace SpriteKind {
 // If you try to eat the death pill you will lose a life, but gain 15 points.
 // 
 // Princess, you have 60 seconds and 3 life to finish the game.
-function randomAssets2 () {
-	
-}
-// Eating a strawberry or a cherry gives 1 point
-// 
-// Eating taco gives 10 points
-// 
-// If you try to eat the death pill you will lose a life, but gain 15 points.
-// 
-// Princess, you have 60 seconds and 3 life to finish the game.
 function randomAssets () {
     lata = sprites.create(assets.image`myImage9`, SpriteKind.Food)
     lata.x = randint(0.4, scene.screenWidth())
@@ -27,7 +17,7 @@ function randomAssets () {
     papel.setScale(0.5, ScaleAnchor.Middle)
     papel.x = randint(1, scene.screenWidth())
     papel.y = randint(1, scene.screenWidth())
-    if (true) {
+    if (Math.percentChance(30)) {
         deathpill = sprites.create(img`
             ........................
             ........................
@@ -65,9 +55,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
         game.gameOver(true)
     }
 })
-function initializeLevel (level: number) {
-	
-}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    info.changeScoreBy(15)
+    otherSprite.destroy()
+})
 let deathpill: Sprite = null
 let papel: Sprite = null
 let lata: Sprite = null
