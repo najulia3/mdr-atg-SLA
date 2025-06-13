@@ -39,7 +39,7 @@ let deathpill: Sprite = null
 let papel: Sprite = null
 let lata: Sprite = null
 info.setLife(3)
-info.startCountdown(60)
+info.startCountdown(50)
 let mySprite3 = sprites.create(img`
     . f f f . f f f f . f f f . 
     f f e f f 8 8 e e f f 8 f f 
